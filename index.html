@@ -9,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham Dhiman - Resume</title>
     <style>
+        /* Base Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
             color: #333;
             line-height: 1.6;
             margin: 0;
@@ -19,25 +20,36 @@
         }
 
         .container {
-            width: 80%;
-            max-width: 900px;
+            width: 90%;
+            max-width: 1000px;
             margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
         }
 
         .header {
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eaeaea;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 36px;
-            color: #007bff;
+            font-size: 42px;
+            color: #0078d4;
+            letter-spacing: 1px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .header h1:hover {
+            color: #0056a3;
         }
 
         .header h2 {
@@ -49,41 +61,68 @@
         .contact-info {
             text-align: center;
             margin-top: 20px;
+            margin-bottom: 30px;
         }
 
         .contact-info p {
             margin: 5px 0;
-            font-size: 16px;
+            font-size: 18px;
+        }
+
+        .contact-info p a {
+            color: #0078d4;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-info p a:hover {
+            color: #0056a3;
         }
 
         .section-title {
-            font-size: 24px;
+            font-size: 28px;
             color: #333;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #007bff;
-            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #0078d4;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: #0078d4;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
         }
 
         .education, .experience, .skills, .projects {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .education p, .experience p, .skills p, .projects p {
-            margin: 5px 0;
-            font-size: 16px;
+            margin: 10px 0;
+            font-size: 18px;
         }
 
         .job-title {
-            font-size: 18px;
-            color: #007bff;
+            font-size: 20px;
+            color: #0078d4;
             margin-bottom: 5px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .job-title:hover {
+            color: #0056a3;
         }
 
         .date {
-            font-size: 14px;
+            font-size: 16px;
             color: #888;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .skills ul {
@@ -92,17 +131,23 @@
         }
 
         .skills ul li {
-            background-color: #007bff;
+            background-color: #0078d4;
             color: #fff;
             display: inline-block;
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin-right: 10px;
-            margin-bottom: 10px;
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .skills ul li:hover {
+            background-color: #0056a3;
         }
 
         .languages {
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .languages ul {
@@ -113,9 +158,53 @@
 
         .languages ul li {
             display: inline-block;
-            font-size: 16px;
+            font-size: 18px;
             color: #555;
-            margin-right: 20px;
+            margin-right: 30px;
+        }
+
+        .projects {
+            position: relative;
+        }
+
+        .projects p {
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .projects p::before {
+            content: '➤';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 18px;
+            color: #0078d4;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .projects p:hover::before {
+            color: #0056a3;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .skills ul li {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -128,8 +217,8 @@
         </div>
 
         <div class="contact-info">
-            <p><strong>Phone:</strong> +91 7024836401</p>
-            <p><strong>Email:</strong> dhimans60@gmail.com</p>
+            <p><strong>Phone:</strong> <a href="tel:+917024836401">+91 7024836401</a></p>
+            <p><strong>Email:</strong> <a href="mailto:dhimans60@gmail.com">dhimans60@gmail.com</a></p>
             <p><strong>Location:</strong> Pune, India</p>
         </div>
 
@@ -209,3 +298,4 @@
 
 </body>
 </html>
+
